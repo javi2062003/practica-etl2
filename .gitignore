@@ -1,0 +1,60 @@
+# Ignorar carpetas y archivos que no deben subirse
+
+# Archivos de configuración VSCode
+.vscode/
+
+# Archivos compilados y temporales de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Directorios de salida/compilación (ajusta si usas otro build tool)
+bin/
+build/
+target/
+
+# Archivos de logs
+logs/
+*.log
+
+# Archivos de base de datos, si los hubiera
+*.db
+*.sqlite
+*.h2.db
+
+# Archivos de entrada con datos sensibles (input csv, json, etc)
+data/input/
+# Si quieres subir input, cambia esta línea o ignora solo archivos específicos
+# data/input/proveedor_ac.csv
+# data/input/proveedor_b.csv
+
+# Archivos generados
+data/output/
+
+# Ignorar configuraciones del sistema y temporales
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.bak
+
+# Archivos de staging ETL, si hay datos temporales
+etl/*.tmp
+
+# Ignorar archivos de utilidades que no deben subirse
+utils/
+
+# Ignorar credenciales (si las tienes en archivos properties o config)
+*.properties
+*.env
+.env.*
+
+# Si usas Maven o Gradle
+# /target/
+# *.iml
+# .idea/
+
+# Ignorar archivos de base de datos locales y backups
+*.sql
+*.dump
