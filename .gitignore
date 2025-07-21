@@ -1,60 +1,33 @@
-# Ignorar carpetas y archivos que no deben subirse
-
-# Archivos de configuración VSCode
-.vscode/
-
-# Archivos compilados y temporales de Java
-*.class
-*.jar
-*.war
-*.ear
-
-# Directorios de salida/compilación (ajusta si usas otro build tool)
-bin/
-build/
+HELP.md
 target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Archivos de logs
-logs/
-*.log
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Archivos de base de datos, si los hubiera
-*.db
-*.sqlite
-*.h2.db
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
-# Archivos de entrada con datos sensibles (input csv, json, etc)
-data/input/
-# Si quieres subir input, cambia esta línea o ignora solo archivos específicos
-# data/input/proveedor_ac.csv
-# data/input/proveedor_b.csv
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Archivos generados
-data/output/
-
-# Ignorar configuraciones del sistema y temporales
-.DS_Store
-Thumbs.db
-*.tmp
-*.swp
-*.bak
-
-# Archivos de staging ETL, si hay datos temporales
-etl/*.tmp
-
-# Ignorar archivos de utilidades que no deben subirse
-utils/
-
-# Ignorar credenciales (si las tienes en archivos properties o config)
-*.properties
-*.env
-.env.*
-
-# Si usas Maven o Gradle
-# /target/
-# *.iml
-# .idea/
-
-# Ignorar archivos de base de datos locales y backups
-*.sql
-*.dump
+### VS Code ###
+.vscode/

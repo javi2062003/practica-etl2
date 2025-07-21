@@ -1,0 +1,38 @@
+[
+  {
+    "productCode": "HP-LAP-001",
+    "productName": "HP Spectre x360 Laptop",
+    "priceData": {
+      "value": 1399.00,
+      "currency": "EUR"
+    },
+    "categoryRef": "INFORMATICA"
+  },
+  {
+    "productCode": "APL-IPH-14P",
+    "productName": "Apple iPhone 14 Pro",
+    "priceData": {
+      "value": 1100.00,
+      "currency": "USD"
+    },
+    "categoryRef": "ELECTRONICA"
+  },
+  {
+    "productCode": "GOO-HMINI-G2",
+    "productName": "Google Nest Mini",
+    "priceData": {
+      "value": 49.99,
+      "currency": "EUR"
+    },
+    "categoryRef": "HOGAR"
+  },
+  {
+    "productCode": "DELL-MON-U27",
+    "productName": "Dell UltraSharp 27 Monitor",
+    "priceData": {
+      "value": 450.00,
+      "currency": "USD"
+    },
+    "categoryRef": "INFORMATICA"
+  }
+]
