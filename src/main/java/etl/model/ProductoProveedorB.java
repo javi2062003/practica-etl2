@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ProductoProveedorB {
 
-    // --- ATRIBUTOS FALTANTES ---
     @JsonProperty("productCode")
     private String productCode;
 
@@ -13,12 +12,10 @@ public class ProductoProveedorB {
 
     @JsonProperty("categoryRef")
     private String categoryRef;
-    // -------------------------
 
     @JsonProperty("priceData")
     private PriceData priceData;
 
-    // --- GETTERS Y SETTERS PARA TODOS LOS ATRIBUTOS ---
 
     public String getProductCode() {
         return productCode;
