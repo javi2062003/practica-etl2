@@ -11,7 +11,7 @@ public class ProductoFinal {
     private String fuenteProveedor;
     private Timestamp fechaActualizacion;
     
-    public ProductoFinal(Integer id, String sku, String nombre, Integer precio, Integer id_categoria,
+    public ProductoFinal(Integer id, String sku, String nombre, Double precio, Integer id_categoria,
             String fuenteProveedor, Timestamp fechaActualizacion) {
         this.id = id;
         this.sku = sku;

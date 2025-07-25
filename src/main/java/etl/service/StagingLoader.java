@@ -9,11 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import etl.model.ProductoProveedorB;
-
+@Service
 public class StagingLoader {
     String url = "jdbc:postgresql://localhost:5432/mdm";
     String user = "postgres";

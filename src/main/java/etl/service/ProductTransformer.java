@@ -2,7 +2,6 @@ package etl.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -10,9 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import etl.model.ProductoFinal;
-
-
+@Service
 public class ProductTransformer {
     String url = "jdbc:postgresql://localhost:5432/mdm";
     String user = "postgres";
@@ -64,7 +64,9 @@ public class ProductTransformer {
 
     
         List<ProductoFinal> productosFinales = new ArrayList<>();
+        int i = 0;
         for (Map<String, Object> bruto : productosBrutos) {
+
             String fuente = (String) bruto.get("fuente");
             String idOriginal = bruto.get("id_original").toString();
             String sku = fuente + " - " + idOriginal;
@@ -84,8 +86,7 @@ public class ProductTransformer {
             }
 
             int idCategoria = 1;
-
-            ProductoFinal productoLimpio = new ProductoFinal(idCategoria, nombreLimpio, nombreLimpio, idCategoria, idCategoria, nombreLimpio, null);
+            ProductoFinal productoLimpio = new ProductoFinal(i , sku, nombreLimpio, precioEnEur, idCategoria, fuente, null);
 
             productoLimpio.setSku(sku);
             productoLimpio.setNombre(nombreLimpio);
@@ -94,6 +95,7 @@ public class ProductTransformer {
             productoLimpio.setFuenteProveedor(fuente);
 
             productosFinales.add(productoLimpio);
+            i++;
 
         }
         return productosFinales;
