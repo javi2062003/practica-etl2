@@ -1,4 +1,4 @@
-package etl.service;
+package com.practica.mdm2.mdm2.etl.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,10 +11,10 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import etl.model.ProductoFinal;
+import com.practica.mdm2.mdm2.etl.model.ProductoFinal;
 @Service
 public class ProductTransformer {
-    String url = "jdbc:postgresql://localhost:5432/mdm";
+    String url = "jdbc:postgresql://localhost:5432/mdm2";
     String user = "postgres";
     String password = "admin";
 
@@ -50,12 +50,16 @@ public class ProductTransformer {
 
                     while (rs.next()) {
                         Map<String, Object> productoB = new HashMap<>();
-                        productoB.put("id_original", rs.getInt("codigo_producto"));
-                        productoB.put("nombre_bruto", rs.getString(("nombre_producto")));
-                        productoB.put("precio_bruto", rs.getDouble("precio_moneda"));
-                        productoB.put("categoria_bruta", rs.getString(("ref_categoria")));
+                        productoB.put("id_original", rs.getString("codigo_producto")); // Es VARCHAR
+                        productoB.put("nombre_bruto", rs.getString("nombre_producto"));
+                        productoB.put("precio_bruto", rs.getDouble("precio_valor")); // <-- aquí el cambio importante
+                        productoB.put("moneda_bruta", rs.getString("precio_moneda")); // <-- añade para moneda
+                        productoB.put("categoria_bruta", rs.getString("ref_categoria"));
                         productoB.put("fuente", "PROVB");
+
+                        productosBrutos.add(productoB);
                     }
+
                 }
         } catch (Exception e) {
             System.err.println("❌ Error al obtener datos de proveedor_a");

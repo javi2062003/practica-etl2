@@ -1,4 +1,4 @@
-package etl.service;
+package com.practica.mdm2.mdm2.etl.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,10 +8,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import etl.model.ProductoFinal;
+import com.practica.mdm2.mdm2.etl.model.ProductoFinal;
 @Service
 public class ProductLoader {
-    String url = "jdbc:postgresql://localhost:5432/mdm";
+    String url = "jdbc:postgresql://localhost:5432/mdm2";
     String user = "postgres";
     String password = "admin";
 

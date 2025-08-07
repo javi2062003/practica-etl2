@@ -1,4 +1,4 @@
-package etl.model;
+package com.practica.mdm2.mdm2.etl.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

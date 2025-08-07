@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import etl.model.ProductoFinal;
-import etl.service.ProductLoader;
-import etl.service.ProductTransformer;
-import etl.service.StagingLoader;
+import com.practica.mdm2.mdm2.etl.model.ProductoFinal;
+import com.practica.mdm2.mdm2.etl.service.ProductLoader;
+import com.practica.mdm2.mdm2.etl.service.ProductTransformer;
+import com.practica.mdm2.mdm2.etl.service.StagingLoader;
 
 import java.util.List;
 
