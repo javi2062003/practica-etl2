@@ -1,33 +1,51 @@
 package com.practica.mdm2.mdm2.etl.model;
 
 import java.security.Timestamp;
+import java.time.LocalDateTime;
+
+// AÑADE ESTOS IMPORTS
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity // Le dice a JPA que esta clase es una tabla de BD
+@Table(name = "catalogo_productos") // Conecta esta clase a la tabla "products" de tu schema.sql
 
 public class ProductoFinal {
-    private Integer id;
+
+    @Id // Marca este campo como la clave primaria (ID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // El ID se genera automáticamente por la BD
+    private Integer id_producto;
     private String sku;
-    private String nombre;
-    private Double precio;
+    private String nombre_normalizado;
+    private Double precio_eur;
     private Integer id_categoria;
-    private String fuenteProveedor;
-    private Timestamp fechaActualizacion;
+    private String fuente_proveedor;
+    private LocalDateTime fecha_actualizacion;
     
-    public ProductoFinal(Integer id, String sku, String nombre, Double precio, Integer id_categoria,
-            String fuenteProveedor, Timestamp fechaActualizacion) {
-        this.id = id;
+
+    public ProductoFinal() {}
+
+
+        public ProductoFinal(Integer id_producto, String sku, String nombre_normalizado, Double precio_eur, Integer id_categoria,
+            String fuente_proveedor, LocalDateTime fecha_actualizacion) {
+        this.id_producto = id_producto;
         this.sku = sku;
-        this.nombre = nombre;
-        this.precio = precio;
+        this.nombre_normalizado = nombre_normalizado;
+        this.precio_eur = precio_eur;
         this.id_categoria = id_categoria;
-        this.fuenteProveedor = fuenteProveedor;
-        this.fechaActualizacion = fechaActualizacion;
+        this.fuente_proveedor = fuente_proveedor;
+        this.fecha_actualizacion = fecha_actualizacion;
     }
 
     public Integer getId() {
-        return id;
+        return id_producto;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer id_producto) {
+        this.id_producto = id_producto;
     }
 
     public String getSku() {
@@ -39,19 +57,19 @@ public class ProductoFinal {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre_normalizado;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre_normalizado) {
+        this.nombre_normalizado = nombre_normalizado;
     }
 
     public Double getPrecio() {
-        return precio;
+        return precio_eur;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setPrecio(Double precio_eur) {
+        this.precio_eur = precio_eur;
     }
 
     public Integer getId_categoria() {
@@ -63,19 +81,19 @@ public class ProductoFinal {
     }
 
     public String getFuenteProveedor() {
-        return fuenteProveedor;
+        return fuente_proveedor;
     }
 
-    public void setFuenteProveedor(String fuenteProveedor) {
-        this.fuenteProveedor = fuenteProveedor;
+    public void setFuenteProveedor(String fuente_proveedor) {
+        this.fuente_proveedor = fuente_proveedor;
     }
 
-    public Timestamp getFechaActualizacion() {
-        return fechaActualizacion;
+    public LocalDateTime getFechaActualizacion() {
+        return fecha_actualizacion;
     }
 
-    public void setFechaActualizacion(Timestamp fechaActualizacion) {
-        this.fechaActualizacion = fechaActualizacion;
+    public void setFechaActualizacion(LocalDateTime fecha_actualizacion) {
+        this.fecha_actualizacion = fecha_actualizacion;
     }
     
 }
